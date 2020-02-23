@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 对应接口类 -->
+<mapper namespace="com.ddd.dao.ManagerDao">
+
+    <select id="selectManager" resultType="Post">
+        SELECT * FROM manager
+    </select>
+    <select id="updateM" parameterType="_int" resultType="Post">
+select * FROM manager where mid=#{id}
+
+    </select>
+    <insert id="insertM" parameterType="Post">
+            INSERT into manager
+    (mid,musername,mpassword)
+    VALUES(null,#{musername},#{mpassword})
+    </insert>
+    <delete id="deleteM" parameterType="_int">
+        delete from
+	manager
+		where mid=#{mid}
+    </delete>
+<!--    <update id="update" parameterType="Post">-->
+
+<!--	update ppost set-->
+<!--		pname=#{pname},psalary=#{psalary},pnumberofperson=#{pnumberofperson}-->
+<!--		where pid =#{pid}-->
+<!--</update>-->
+
+</mapper>
